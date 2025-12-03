@@ -6,160 +6,41 @@
     <title>Portafolio</title>
     <!-- Agregar Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background: url('./assets/low-poly-grid-haikei.svg')no-repeat center center/cover; /* Imagen como fondo */
-            color: white;
-            height: 400px; /* Altura suficiente para mostrar la imagen */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        section {
-            margin-top: 5cm;
-            margin-bottom: 5cm;
-            padding: 20px;
-            text-align: center;
-            align-items: center;
-        }
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 20px auto;
-            border: 3px solid white; /* Añadir borde blanco para destacar */
-        }
-        .skills {
-            padding: 20px;
-        }
-
-        .skills h2 {
-            text-align: center;
-        }
-        .skills ul {
-            list-style: none;
-            padding: 0;
-            display: flex; /* Flexbox para alinear en fila */
-            justify-content: center; /* Centrar los elementos */
-            flex-wrap: wrap; /* Permitir que los elementos se ajusten si no caben */
-        }
-        .skills ul li {
-            margin: 10px; /* Espaciado entre los elementos */
-            display: flex;
-            align-items: center;
-        }
-        .skills ul li i {
-            margin-right: 10px;
-        }
-        .projects {
-            padding: 20px;
-        }
-        .projects h2 {
-            text-align: center;
-        }
-        .project-gallery {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .project-card {
-            height: 6cm;
-            width: 8cm;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            text-align: center;
-        }
-        .project-card img {
-            width: 100%;
-            height: auto;
-        }
-        .project-card p {
-            padding: 10px;
-        }
-        .resume {
-            padding: 20px;
-        }
-        .contact {
-            padding: 20px;
-        }
-        .contact h2 {
-            text-align: center;
-        }
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .contact form input,
-        .contact form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact form #submitBtn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .contact form button:hover {
-            background: #555;
-        }
-        
-        /* Estilos para el tema oscuro */
-        body.dark-theme {
-            background: #222;
-            color: #eee;
-        }
-        body {
-            background: #fff;
-            color: #222;
-        }
-        #themeBtn {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.5rem 1rem;
-        } 
-        #langBtn {
-            position: fixed;
-            top: 1rem;
-            right: 8rem;
-            padding: 0.5rem 1rem;
-        } 
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="carousel.css"> -->
+    <!-- Carga recomendada de hoja de estilos externa (colocar dentro de <head>) -->
+    <!-- <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'"> -->
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#medias-title">Redes sociales</a></li>
+            <li><a href="#skills-title">Habilidades</a></li>
+            <li><a href="#projects-title">Proyectos</a></li>
+            <li><a href="#resume-title">Currículum</a></li>
+            <li><a href="#contact-title">Contacto</a></li>
+            <li><button id="themeBtn">Cambiar tema</button></li>
+        </ul>
+    </nav>
     <header>
         <img src="profile.jpg" alt="Foto de Perfil" class="profile-photo">
-        <h1>Mi Portafolio</h1>
+        <h1>Franco Piedrabuena</h1>
         <div>
-            <!-- <button id="themeBtn">Cambiar tema</button>-->
-            
-            <!-- <button id="langBtn">Inglés</button> -->
+            <p><strong>Desarrollador Web Junior</strong></p>
+            <p>Apasionado por crear experiencias web atractivas y funcionales.</p>
         </div>
     </header>
 
+    <section class="social-media">
+        <h2 id="medias-title">REDES SOCIALES</h2>
+        <a href="https://www.linkedin.com/in/franco-piedrabuena-20a937295/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.github.com/FrancoP505" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+    </section>
+
     <section class="skills">
-        <h2>Habilidades</h2>
-        <div>
+        <h2 id="skills-title">HABILIDADES</h2>
+        <div class="div-skills">
             <!-- <h3>Hard Skills</h3> -->
             <ul>
                 <li><i class="fab fa-html5"></i>HTML</li>
@@ -178,40 +59,81 @@
     </section>
 
     <section class="projects"><!--proyectos-->
-        <h2>Proyectos</h2>
+        <h2 id="projects-title">PROYECTOS</h2>
         <div class="project-gallery">
             <div class="project-card">
-                <img src="project1.jpg" alt="Proyecto 1">
-                <p>proyecto de digitalización de legajos para el instituto</p>
-
+                <img src="assets/project1.png" alt="Proyecto 1">
+                <h3>Sistema de legajos</h3>
+                <p>Fue pensado como un proyecto de tésis para mi 
+                instituto, contaba con un sistema de evaluación por 
+                valoración de legajos de los docentes, con el... 
+                <!-- <a href="#">...leer más</a> -->
+                </p>
             </div>
             <div class="project-card">
-                <img src="project2.jpg" alt="Proyecto 2">
+                <img src="assets/project2.jpg" alt="Proyecto 2">
                 <p>Descripción del Proyecto 2</p>
             </div>
             <div class="project-card">
-                <img src="project3.jpg" alt="Proyecto 3">
+                <img src="assets/project3.jpg" alt="Proyecto 3">
                 <p>Descripción del Proyecto 3</p>
             </div>
         </div>
+        <!-- <div class="carousel">
+            <div class="carousel-track">
+                <div class="card">Project 1</div>
+                <div class="card">Project 2</div>
+                <div class="card">Project 3</div>
+            </div>
+        </div> -->
+        <ul class="project-controls">
+            <li><button id="prevBtn">⇦</button></li>
+            <li><button id="readBtn">Leer más</button></li>
+            <li><button id="nextBtn">⇨</button></li>
+        </ul>
     </section>
 
     <section class="resume">
-        <h2>Currículum</h2>
-        <p>Puedes descargar mi currículum <a href="resume.pdf" download>aquí</a>.</p>
-    </section>
+        <h2 id="resume-title">CURRÍCULUM</h2>
+        <img id="pdfImage" src="assets/PDF-icon.webp" alt="Currículum PDF">
+        <p>Puedes ver mi currículum aquí <a href="assets/CV Franco Piedrabuena.pdf" target="_blank">aquí</a>.</p>
+        <script>
+            // Agregar funcionalidad al botón de descargar CV si es necesario
+            // addEventListener('DOMContentLoaded', function() {
+            //     const downloadLink = document.querySelector('a[download]');
+            //     downloadLink.addEventListener('click', function(event) {
+            //         event.preventDefault();
+            //     });
+            // });
+            // addEventListener('click', function() {
+            //     window.location.href = 'assets/CV Franco Piedrabuena.pdf';
+            // });
+        </script>
+    </section> 
 
     <section class="contact">
-        <h2>Contacto</h2>
+        <h2 id="contact-title">CONTACTO</h2>
         <form action="mailto:tu_correo@example.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Tu Nombre" required>
-            <input type="email" name="email" placeholder="Tu Correo" required>
-            <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
-            <button type="submit" id="submitBtn">Enviar</button>
+            <p>flpiedrabuena@gmail.com</p>
+            <button type="button" id="openMailBtn">Enviar</button>
+            <button type="button" id="copyMailBtn"><i class="fab fa-clip"></i>Copiar</button>
+            <script>
+                document.getElementById('openMailBtn').addEventListener('click', function() {
+                    window.location.href = 'mailto:flpiedrabuena@gmail.com';
+                });
+                document.getElementById('copyMailBtn').addEventListener('click', function() {
+                    const email = 'mailto:flpiedrabuena@gmail.com';
+                    navigator.clipboard.writeText(email).then(function() {
+                        alert('Correo copiado al portapapeles: ' + email);
+                    }, function(err) {
+                        console.error('Error al copiar el correo: ', err);
+                    });
+                });
+            </script>
         </form>
     </section>
 </body>
-</html>
 <script src="theme.js"></script> 
-<script src="language.js"></script>
-
+<script src="project-card.js"></script>
+<!-- <script src="carousel.js"></script> -->
+</html>

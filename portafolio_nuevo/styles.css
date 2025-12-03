@@ -1,0 +1,216 @@
+:root {
+    --primary-color: #211f2e;
+    --secondary-color: #FFD166;
+    --third-color: #E7ECEF;
+    --fourth-color: #504872;
+    --dark-primary-color: #333;
+    --dark-secondary-color: #504872;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* padding-top: 45.6px; */
+    line-height: 1.6;
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+nav {
+    background: var(--primary-color);
+    color: var(--third-color);
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+}
+
+/* Hacer el nav pegajoso al hacer scroll */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: var(--third-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li button {
+    background: none;
+    border: none;
+    color: var(--third-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+section {
+    margin-top: 5cm;
+    margin-bottom: 5cm;
+    /* padding: 20px; */
+    text-align: center;
+    align-items: center;
+}
+section h2{
+    font-size: 2em;
+    margin:16px 0 16px 0;
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 10px;
+}
+i {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin: 0 10px;
+}
+header {
+    text-align: center;
+    padding: 20px;
+    /* background: url('./assets/low-poly-grid-haikei.svg')no-repeat center center/cover; Imagen como fondo */
+    height: 400px; /* Altura suficiente para mostrar la imagen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    margin: 20px auto;
+    border: 3px solid white;
+}
+
+/* Estilos para la sección de habilidades */
+
+.skills {
+    padding: 20px;
+}
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Flexbox para alinear en fila */
+    justify-content: center; /* Centrar los elementos */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten si no caben */
+}
+.skills ul li {
+    margin: 10px; /* Espaciado entre los elementos */
+    display: flex;
+    align-items: center;
+}
+.skills ul li i {
+    margin-right: 10px;
+}
+
+/* Estilos para la sección de proyectos */
+.project-gallery {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    justify-content: center;
+    gap: 20px;
+}
+.project-card {
+    display: inline-block;
+    height: auto;
+    width: 400px;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;            
+    transition: box-shadow 0.3s;
+} 
+.project-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.project-controls {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    /* justify-content: center; */
+    gap: 10px;
+}
+.project-details {
+    display: none;  
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+.project-details.visible {
+    display: block;
+}
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+.project-card p {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilos para la sección de currículum */
+#pdfImage {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+}
+
+
+/* Estilos para la sección de contacto */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* .contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+.contact form button {
+    display: inline;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact form button:hover {
+    background: #555;
+} 
+
+/* Estilos para el tema oscuro */
+body.dark-theme {
+    background: var(--dark-primary-color);
+    color: var(--third-color);
+}
+h2.dark-theme {
+    background-color: var(--dark-secondary-color);
+}
+i.dark-theme {
+    color: var(--third-color);
+}
+#themeBtn {
+    /* position: fixed; */
+    /* top: 1rem;
+    right: 1rem; */
+    padding: 0.5rem 1rem;
+} 

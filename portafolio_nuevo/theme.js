@@ -1,7 +1,30 @@
 const toggleTheme = () => {
     const body = document.body;
+    const h2 = document.querySelectorAll('h2');
+    const icons = document.querySelectorAll('i');
     const isDark = body.classList.toggle('dark-theme');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    h2.forEach(header => {
+        if (isDark) {
+            header.classList.add('dark-theme');
+        } else {
+            header.classList.remove('dark-theme');
+        }
+    });
+    icons.forEach(icon => {
+        if (isDark) {
+            icon.classList.add('dark-theme');
+        } else {
+            icon.classList.remove('dark-theme');
+        }
+    });
+    // themeBtn.forEach(btn => {
+    //     if (isDark) {
+    //         btn.classList.add('dark-theme');
+    // localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    //     } else {
+    //         btn.classList.remove('dark-theme');
+    //     }
+    // });
 };
 
 // Apply saved theme on load
@@ -12,27 +35,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Create button
-const themeBtn = document.createElement('Button');
-themeBtn.id = 'themeBtn';
-themeBtn.textContent = 'Cambiar tema';
-themeBtn.onclick = toggleTheme;
-document.body.appendChild(themeBtn);
+// Attach event listener to button
+document.getElementById('themeBtn').addEventListener('click', () => {
+    toggleTheme();
+});
 
-// Example CSS (add to your CSS file)
-/*
-body.dark-theme {
-    background: #222;
-    color: #eee;
-}
-body {
-    background: #fff;
-    color: #222;
-}
-button {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-}
-*/
+// // Create button
+// const themeBtn = document.createElement('Button');
+// themeBtn.id = 'themeBtn';
+// themeBtn.textContent = 'Cambiar tema';
+// themeBtn.onclick = toggleTheme;
+// document.body.appendChild(themeBtn);
+
