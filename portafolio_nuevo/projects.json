@@ -1,0 +1,63 @@
+[
+  {
+    "id": "project1",
+    "title": "Sistema de legajos",
+    "image": "assets/project1.png",
+    "technologies": ["html5", "css3-alt", "js", "php", "database"],
+    "features": [
+      "Gestión de legajos docentes",
+      "Sistema de evaluación por valoración",
+      "Interfaz amigable y funcional"
+    ],
+    "description": "Fue pensado como un proyecto de tésis para mi instituto, contaba con un sistema de evaluación por valoración de legajos de los docentes, con el...",
+    "gallery": [
+      "assets/legajos1.png",
+      "assets/legajos2.png",
+      "assets/legajos3.png"
+    ],
+    "links": {
+      "live": "https://mi-proyecto.com",
+      "github": "https://github.com/FrancoP505/react-proyecto-legajos"
+    }
+  },
+  {
+    "id": "project2",
+    "title": "Almacen virtual",
+    "image": "assets/project1.png",
+    "technologies": ["html5", "css3-alt", "bootstrap", "js"],
+    "features": [
+      "Cargar productos",
+      "Realizar compras vía posnet",
+      "Gestión de stock"
+    ],
+    "description": "Fue creado con el propósito de simular un almacén virtual, permitiendo a los usuarios cargar productos, realizar compras vía posnet, y gestionar el stock de manera eficiente...",
+    "gallery": [
+      "assets/almacen1.png",
+      "assets/almacen2.png"
+    ],
+    "links": {
+      "live": "https://almacen-virtual.com",
+      "github": "https://github.com/FrancoP505/almacen-virtual"
+    }
+  },
+  {
+    "id": "project3",
+    "title": "Chat bot de gimnasio",
+    "image": "assets/project1.png",
+    "technologies": ["html5", "react", "css3-alt", "js"],
+    "features": [
+      "Asistente inteligente para consultas",
+      "Integración con base de datos de socios",
+      "Respuestas automáticas personalizadas"
+    ],
+    "description": "Un chatbot inteligente diseñado para ayudar a los miembros del gimnasio con consultas sobre horarios, clases y membresías, con interfaz moderna y responsiva...",
+    "gallery": [
+      "assets/chatbot1.png",
+      "assets/chatbot2.png"
+    ],
+    "links": {
+      "live": "https://gym-chatbot.com",
+      "github": "https://github.com/FrancoP505/gym-chatbot"
+    }
+  }
+]

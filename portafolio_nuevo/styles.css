@@ -3,15 +3,26 @@
     --secondary-color: #FFD166;
     --third-color: #E7ECEF;
     --fourth-color: #504872;
-    --dark-primary-color: #333;
-    --dark-secondary-color: #504872;
+    --grey: #888888;
+    --white-color: #fff;
+    --light-grey: #dedede;
+    --border-grey: #7F7C87;
+    --card-border: #ccc;
+    --link-blue: #007bff;
+    --link-blue-hover: #0056b3;
+    --dark-hover: #555;
+    --card-background: #dedede;
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    --shadow-dark: rgba(0, 0, 0, 1);
+    --border-radius-small: 5px;
+    --border-radius-medium: 8px;
+    --border-radius-large: 10%;
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* padding-top: 45.6px; */
     line-height: 1.6;
     background: var(--white-color);
     color: var(--primary-color);
@@ -21,16 +32,12 @@ nav {
     color: var(--third-color);
     padding: 10px 0;
     text-align: center;
-    display: block;
-}
-
-/* Hacer el nav pegajoso al hacer scroll */
-nav {
+    display: inline-block;
     position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    box-shadow: 10px 6px 6px rgba(0,0,0,0.20);
 }
 nav ul {
     list-style: none;
@@ -40,7 +47,12 @@ nav ul {
     justify-content: center;
 }
 nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
+    padding: 5px;
+}
+nav ul li:hover {
+    /* text-decoration: underline; */
+    background-color: var(--fourth-color);
 }
 nav ul li a {
     color: var(--third-color);
@@ -61,7 +73,6 @@ h1 {
 section {
     margin-top: 5cm;
     margin-bottom: 5cm;
-    /* padding: 20px; */
     text-align: center;
     align-items: center;
 }
@@ -80,8 +91,7 @@ i {
 header {
     text-align: center;
     padding: 20px;
-    /* background: url('./assets/low-poly-grid-haikei.svg')no-repeat center center/cover; Imagen como fondo */
-    height: 400px; /* Altura suficiente para mostrar la imagen */
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,13 +100,12 @@ header {
 .profile-photo {
     width: 250px;
     height: 250px;
-    border-radius: 10%;
+    border-radius: var(--border-radius-large);
     margin: 20px auto;
-    border: 3px solid white;
+    border: 3px solid var(--white-color);
 }
 
 /* Estilos para la sección de habilidades */
-
 .skills {
     padding: 20px;
 }
@@ -119,49 +128,101 @@ header {
 /* Estilos para la sección de proyectos */
 .project-gallery {
     display: grid;
-    grid-template-columns: 400px 400px 400px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
 }
 .project-card {
+    text-align: center;
+    justify-content: center;   
     display: inline-block;
     height: auto;
     width: 400px;
     margin: 15px;
     padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 6px solid var(--border-grey);
+    border-radius: var(--border-radius-medium);
     overflow: hidden;
     cursor: pointer;            
     transition: box-shadow 0.3s;
+    background: var(--light-grey);
 } 
 .project-card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.project-controls {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    /* justify-content: center; */
-    gap: 10px;
-}
-.project-details {
-    display: none;  
-    padding: 10px;
-    background-color: #f9f9f9;
-}
-.project-details.visible {
-    display: block;
+    box-shadow: 0 4px 8px var(--shadow-dark);
 }
 .project-card img {
     width: 100%;
     height: auto;
-    border-radius: 5%;
+    border-radius: var(--border-radius-large);
 }
 .project-card p {
     padding: 10px;
     text-align: left;
+}
+.project-card h3{
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.project-card ul {
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+.project-card ul label{
+    font-weight: bold;
+    margin-right: 10px;
+}
+.project-card .card-tech{
+    list-style: none;
+}
+.project-card .card-features{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.card-features li {
+    text-align: left;
+    margin: 5px 0;
+}
+/* Modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 70%;
+  max-width: 800px;
+  border-radius: 10px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+.gallery img {
+  width: 45%;
+  margin: 5px;
+  border-radius: 5px;
+}
+.links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 15px;
+  background: var(--link-blue);
+  color: var(--white-color);
+  text-decoration: none;
+  border-radius: var(--border-radius-small);
+}
+.links a:hover {
+  background: var(--link-blue-hover);
 }
 
 /* Estilos para la sección de currículum */
@@ -177,40 +238,54 @@ header {
     max-width: 600px;
     margin: 0 auto;
 }
-/* .contact form input,
-.contact form textarea {
-    width: 100%;
-    padding: 10px;
+.contact form h3 {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: normal;
+    color: var(--primary-color);
+}
+.contact form p {
+    display: inline-block;
+    padding: 10px 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-} */
+    background-color: var(--third-color);
+}
 .contact form button {
-    display: inline;
-    background: #333;
+    padding: 10px 10px;
+    background: var(--fourth-color);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius:5%;
     cursor: pointer;
 }
 .contact form button:hover {
-    background: #555;
+    background: var(--dark-hover);
 } 
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--third-color);
+}
+
 
 /* Estilos para el tema oscuro */
 body.dark-theme {
-    background: var(--dark-primary-color);
+    background: var(--primary-color);
     color: var(--third-color);
 }
 h2.dark-theme {
-    background-color: var(--dark-secondary-color);
+    background-color: var(--fourth-color);
 }
 i.dark-theme {
     color: var(--third-color);
 }
+.project-card.dark-theme {
+    background: var(--fourth-color(0.2));
+    border-color: var(--third-color);
+}
 #themeBtn {
-    /* position: fixed; */
-    /* top: 1rem;
-    right: 1rem; */
     padding: 0.5rem 1rem;
 } 

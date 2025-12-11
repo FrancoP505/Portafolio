@@ -11,129 +11,93 @@
     <!-- Carga recomendada de hoja de estilos externa (colocar dentro de <head>) -->
     <!-- <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'"> -->
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <nonscript><link rel="stylesheet" href="carousel.css"></noscript>
+    
 </head>
 <body>
-    <nav>
+<nav>
+    <ul>
+        <li><a href="#medias-title">Redes sociales</a></li>
+        <li><a href="#skills-title">Habilidades</a></li>
+        <li><a href="#projects-title">Proyectos</a></li>
+        <li><a href="#resume-title">Currículum</a></li>
+        <li><a href="#contact-title">Contacto</a></li>
+        <li><button id="themeBtn">Cambiar tema</button></li>
+    </ul>
+</nav>
+<header>
+    <img src="profile.jpg" alt="Foto de Perfil" class="profile-photo">
+    <h1>Franco Piedrabuena</h1>
+    <div>
+        <p><strong>Desarrollador Web Junior</strong></p>
+        <p>Apasionado por crear experiencias web atractivas y funcionales.</p>
+    </div>
+</header>
+
+<section class="social-media">
+    <h2 id="medias-title">REDES SOCIALES</h2>
+    <a href="https://www.linkedin.com/in/franco-piedrabuena-20a937295/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.github.com/FrancoP505" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+</section>
+
+<section class="skills">
+    <h2 id="skills-title">HABILIDADES</h2>
+    <div class="div-skills">
+        <!-- <h3>Hard Skills</h3> -->
         <ul>
-            <li><a href="#medias-title">Redes sociales</a></li>
-            <li><a href="#skills-title">Habilidades</a></li>
-            <li><a href="#projects-title">Proyectos</a></li>
-            <li><a href="#resume-title">Currículum</a></li>
-            <li><a href="#contact-title">Contacto</a></li>
-            <li><button id="themeBtn">Cambiar tema</button></li>
+            <li><i class="fab fa-html5"></i>HTML</li>
+            <li><i class="fab fa-css3-alt"></i>CSS</li>
+            <li><i class="fab fa-js"></i>JavaScript</li>
+            <li><i class="fab fa-php"></i>PHP</li>
+            <li><i class="fas fa-database"></i>MySQL</li>
+            <li><i class="fab fa-git-alt"></i>Git</li>
+            <li><i class="fab fa-bootstrap"></i>Bootstrap</li>
+            <li><i class="fab fa-wordpress"></i>WordPress</li>
+            <li><i class="fas fa-code"></i>Programación orientada a objetos</li>
         </ul>
-    </nav>
-    <header>
-        <img src="profile.jpg" alt="Foto de Perfil" class="profile-photo">
-        <h1>Franco Piedrabuena</h1>
-        <div>
-            <p><strong>Desarrollador Web Junior</strong></p>
-            <p>Apasionado por crear experiencias web atractivas y funcionales.</p>
-        </div>
-    </header>
-
-    <section class="social-media">
-        <h2 id="medias-title">REDES SOCIALES</h2>
-        <a href="https://www.linkedin.com/in/franco-piedrabuena-20a937295/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.github.com/FrancoP505" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
-    </section>
-
-    <section class="skills">
-        <h2 id="skills-title">HABILIDADES</h2>
-        <div class="div-skills">
-            <!-- <h3>Hard Skills</h3> -->
-            <ul>
-                <li><i class="fab fa-html5"></i>HTML</li>
-                <li><i class="fab fa-css3-alt"></i>CSS</li>
-                <li><i class="fab fa-js"></i>JavaScript</li>
-            </ul>
-        </div>
-        <div>
-            <!-- <h3>Soft Skills</h3> -->
-            <ul>
-                <li><i class="fas fa-comments"></i>Comunicación</li>
-                <li><i class="fas fa-users"></i>Trabajo en equipo</li>
-                <li><i class="fas fa-lightbulb"></i>Resolución de problemas</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="projects"><!--proyectos-->
-        <h2 id="projects-title">PROYECTOS</h2>
-        <div class="project-gallery">
-            <div class="project-card">
-                <img src="assets/project1.png" alt="Proyecto 1">
-                <h3>Sistema de legajos</h3>
-                <p>Fue pensado como un proyecto de tésis para mi 
-                instituto, contaba con un sistema de evaluación por 
-                valoración de legajos de los docentes, con el... 
-                <!-- <a href="#">...leer más</a> -->
-                </p>
-            </div>
-            <div class="project-card">
-                <img src="assets/project2.jpg" alt="Proyecto 2">
-                <p>Descripción del Proyecto 2</p>
-            </div>
-            <div class="project-card">
-                <img src="assets/project3.jpg" alt="Proyecto 3">
-                <p>Descripción del Proyecto 3</p>
-            </div>
-        </div>
-        <!-- <div class="carousel">
-            <div class="carousel-track">
-                <div class="card">Project 1</div>
-                <div class="card">Project 2</div>
-                <div class="card">Project 3</div>
-            </div>
-        </div> -->
-        <ul class="project-controls">
-            <li><button id="prevBtn">⇦</button></li>
-            <li><button id="readBtn">Leer más</button></li>
-            <li><button id="nextBtn">⇨</button></li>
+    </div>
+    <div>
+        <!-- <h3>Soft Skills</h3> -->
+        <ul>
+            <li><i class="fas fa-comments"></i>Comunicación</li>
+            <li><i class="fas fa-users"></i>Trabajo en equipo</li>
+            <li><i class="fas fa-lightbulb"></i>Resolución de problemas</li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section class="resume">
-        <h2 id="resume-title">CURRÍCULUM</h2>
-        <img id="pdfImage" src="assets/PDF-icon.webp" alt="Currículum PDF">
-        <p>Puedes ver mi currículum aquí <a href="assets/CV Franco Piedrabuena.pdf" target="_blank">aquí</a>.</p>
-        <script>
-            // Agregar funcionalidad al botón de descargar CV si es necesario
-            // addEventListener('DOMContentLoaded', function() {
-            //     const downloadLink = document.querySelector('a[download]');
-            //     downloadLink.addEventListener('click', function(event) {
-            //         event.preventDefault();
-            //     });
-            // });
-            // addEventListener('click', function() {
-            //     window.location.href = 'assets/CV Franco Piedrabuena.pdf';
-            // });
-        </script>
-    </section> 
+<section class="projects">
+    <h2 id="projects-title">PROYECTOS</h2>
+    <div class="project-gallery">
+        <!-- Las tarjetas se generan dinámicamente desde projects.json -->
+        
+        <!-- Modal superpuesto (reutilizable para todos los proyectos) -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <!-- Contenido dinámico generado por JS -->
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section class="contact">
-        <h2 id="contact-title">CONTACTO</h2>
-        <form action="mailto:tu_correo@example.com" method="post" enctype="text/plain">
-            <p>flpiedrabuena@gmail.com</p>
-            <button type="button" id="openMailBtn">Enviar</button>
-            <button type="button" id="copyMailBtn"><i class="fab fa-clip"></i>Copiar</button>
-            <script>
-                document.getElementById('openMailBtn').addEventListener('click', function() {
-                    window.location.href = 'mailto:flpiedrabuena@gmail.com';
-                });
-                document.getElementById('copyMailBtn').addEventListener('click', function() {
-                    const email = 'mailto:flpiedrabuena@gmail.com';
-                    navigator.clipboard.writeText(email).then(function() {
-                        alert('Correo copiado al portapapeles: ' + email);
-                    }, function(err) {
-                        console.error('Error al copiar el correo: ', err);
-                    });
-                });
-            </script>
-        </form>
-    </section>
+<section class="resume">
+    <h2 id="resume-title">CURRÍCULUM</h2>
+    <img id="pdfImage" src="assets/PDF-icon.webp" alt="Currículum PDF">
+    <p>Puedes ver mi currículum aquí <a href="assets/CV Franco Piedrabuena.pdf" target="_blank">aquí</a>.</p>
+</section> 
+
+<section class="contact">
+    <h2 id="contact-title">CONTACTO</h2>
+    <form action="mailto:flpiedrabuena@gmail.com" method="post" enctype="text/plain">
+        <h3>Aquí puedes contactarme</h3><br>
+        <p>flpiedrabuena@gmail.com</p>
+        <button type="button" id="openMailBtn">Enviar</button>
+        <button type="button" id="copyMailBtn">Copiar</button>
+    </form>
+</section>
+<footer>
+    <p>&copy; 2025 Franco Piedrabuena. Todos los derechos reservados
 </body>
-<script src="theme.js"></script> 
-<script src="project-card.js"></script>
-<!-- <script src="carousel.js"></script> -->
+<script src="theme.js"></script>
+<script src="utils.js"></script>
 </html>
