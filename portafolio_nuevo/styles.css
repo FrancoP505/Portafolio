@@ -17,6 +17,8 @@
     --border-radius-small: 5px;
     --border-radius-medium: 8px;
     --border-radius-large: 10%;
+    /* aspecto por defecto para imágenes: 4:3 (puedes cambiar a 1/1 si prefieres cuadrados) */
+    --image-aspect: 4/3;
 }
 
 body {
@@ -152,8 +154,12 @@ header {
 }
 .project-card img {
     width: 100%;
-    height: auto;
+    /* Forzar relación de aspecto (ancho:alto). Por defecto 4:3 para que la tarjeta muestre el resto del contenido.
+       En pantallas pequeñas cambiaremos a 1:1 más abajo. */
+    aspect-ratio: var(--image-aspect);
+    object-fit: cover; /* rellena el recuadro manteniendo el recorte centrado */
     border-radius: var(--border-radius-large);
+    display: block;
 }
 .project-card p {
     padding: 10px;
@@ -201,28 +207,91 @@ header {
   border-radius: 10px;
   position: relative;
 }
+
+/* Carousel dentro del modal: muestra una imagen por pantalla */
+.carousel {
+    max-height: 300px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+.carousel-slide {
+    flex: 0 0 100%;
+    height: 400px;
+    /* max-width: 100%; */
+    /* Mantener la proporción de la imagen en el carrusel. Usamos contain para no recortarla. */
+    aspect-ratio: var(--image-aspect);
+    object-fit: contain;
+    display: block;
+}
+.carousel-btn {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.carousel-btn:focus { outline: 2px solid var(--secondary-color); }
+.carousel-indicators {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 8px;
+}
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+}
+.carousel-indicator.active {
+    background: var(--secondary-color);
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 .close {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 28px;
-  cursor: pointer;
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 28px;
+    cursor: pointer;
 }
 .gallery img {
-  width: 45%;
-  margin: 5px;
-  border-radius: 5px;
+    height: auto;
+    width: 45%;
+    margin: 5px;
+    border-radius: 5px;
 }
 .links a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 15px;
-  background: var(--link-blue);
-  color: var(--white-color);
-  text-decoration: none;
-  border-radius: var(--border-radius-small);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background: var(--link-blue);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius-small);
 }
 .links a:hover {
-  background: var(--link-blue-hover);
+    background: var(--link-blue-hover);
 }
 
 /* Estilos para la sección de currículum */
@@ -289,3 +358,10 @@ i.dark-theme {
 #themeBtn {
     padding: 0.5rem 1rem;
 } 
+
+/* En pantallas pequeñas preferimos imágenes cuadradas 1:1 para ocupar menos alto y dejar espacio para el contenido */
+@media (max-width: 600px) {
+    :root { --image-aspect: 1/1; }
+    .project-gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .project-card { width: auto; }
+}

@@ -7,21 +7,36 @@
 // ========================
 
 function openModal(projectId) {
+  // Nuevo: soporte para carrusel. startIndex permite abrir en la imagen 0..N
   const modal = document.getElementById("projectModal");
-  const modalContent = document.querySelector(".modal-content");
-  
-  // Buscar proyecto en array global
+  const modalContent = modal.querySelector(".modal-content");
+
   const project = window.projectsData.find(p => p.id === projectId);
-  
   if (project) {
-    // Actualizar contenido del modal
+    const slidesHTML = project.gallery.map((img, i) => `
+      <img class="carousel-slide" src="${img}" alt="${project.title} imagen ${i+1}" data-index="${i}">
+    `).join('');
+
+    const indicatorsHTML = project.gallery.map((_, i) => `
+      <button class="carousel-indicator" aria-label="Ir a la imagen ${i+1}" data-index="${i}" onclick="carouselGoTo(${i})"></button>
+    `).join('');
+
     modalContent.innerHTML = `
-      <span class="close" onclick="closeModal()">&times;</span>
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
       <h2>${project.title}</h2>
       <p>${project.description}</p>
-      
-      <div class="gallery">
-        ${project.gallery.map(img => `<img src="${img}" alt="Imagen del proyecto">`).join('')}
+
+      <div class="carousel">
+        <button class="carousel-btn prev" onclick="carouselPrev()" aria-label="Anterior">‹</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            ${slidesHTML}
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="carouselNext()" aria-label="Siguiente">›</button>
+        <div class="carousel-indicators">
+          ${indicatorsHTML}
+        </div>
       </div>
 
       <div class="links">
@@ -29,13 +44,94 @@ function openModal(projectId) {
         <a rel="noopener" href="${project.links.github}" target="_blank">💻 Ver código en GitHub</a>
       </div>
     `;
+
+    // Inicializar carrusel (por defecto en la primera imagen)
+    carouselInit(0);
   }
-  
+
   modal.style.display = "flex";
 }
 
 function closeModal() {
-  document.getElementById("projectModal").style.display = "none";
+  const modal = document.getElementById("projectModal");
+  modal.style.display = "none";
+  // Limpiar listeners de teclado
+  document.removeEventListener('keydown', carouselKeyHandler);
+}
+
+// ==========================
+// Carousel implementation
+// ==========================
+const carouselState = {
+  track: null,
+  slides: [],
+  indicators: [],
+  current: 0,
+  total: 0
+};
+
+function carouselInit(startIndex = 0) {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+  carouselState.track = track;
+  carouselState.slides = Array.from(track.querySelectorAll('.carousel-slide'));
+  carouselState.total = carouselState.slides.length;
+  carouselState.indicators = Array.from(document.querySelectorAll('.carousel-indicator'));
+  carouselState.current = Math.min(Math.max(0, startIndex), carouselState.total - 1);
+
+  // Set initial styles
+  carouselState.track.style.width = `${carouselState.total * 100}%`;
+  carouselState.slides.forEach(slide => {
+    slide.style.width = `${100 / carouselState.total}%`;
+  });
+
+  updateCarousel();
+
+  // Keyboard navigation
+  document.addEventListener('keydown', carouselKeyHandler);
+
+  // Touch support (simple)
+  let startX = 0;
+  const viewport = document.querySelector('.carousel-viewport');
+  if (viewport) {
+    viewport.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+    viewport.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (dx > 40) carouselPrev();
+      else if (dx < -40) carouselNext();
+    });
+  }
+}
+
+function updateCarousel() {
+  if (!carouselState.track) return;
+  const offsetPercent = -(carouselState.current * (100 / carouselState.total));
+  carouselState.track.style.transform = `translateX(${offsetPercent}%)`;
+  carouselState.slides.forEach((s, i) => s.setAttribute('aria-hidden', i !== carouselState.current));
+  carouselState.indicators.forEach((btn, i) => btn.classList.toggle('active', i === carouselState.current));
+}
+
+function carouselNext() {
+  if (!carouselState.total) return;
+  carouselState.current = (carouselState.current + 1) % carouselState.total;
+  updateCarousel();
+}
+
+function carouselPrev() {
+  if (!carouselState.total) return;
+  carouselState.current = (carouselState.current - 1 + carouselState.total) % carouselState.total;
+  updateCarousel();
+}
+
+function carouselGoTo(index) {
+  if (!carouselState.total) return;
+  carouselState.current = Math.min(Math.max(0, index), carouselState.total - 1);
+  updateCarousel();
+}
+
+function carouselKeyHandler(e) {
+  if (e.key === 'ArrowLeft') carouselPrev();
+  if (e.key === 'ArrowRight') carouselNext();
 }
 
 // ========================

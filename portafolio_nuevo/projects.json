@@ -2,7 +2,7 @@
   {
     "id": "project1",
     "title": "Sistema de legajos",
-    "image": "assets/project1.png",
+    "image": "assets/project1.png", 
     "technologies": ["html5", "css3-alt", "js", "php", "database"],
     "features": [
       "Gestión de legajos docentes",
