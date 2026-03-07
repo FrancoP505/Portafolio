@@ -1,12 +1,11 @@
 :root {
-    --primary-color: #211f2e;
-    --secondary-color: #FFD166;
-    --third-color: #E7ECEF;
-    --fourth-color: #504872;
-    --grey: #888888;
+    --black: #121212;
+    --yellow: #FFD166;
+    --light-light-grey: #E7ECEF;
+    --indigo: #504872;
+    --light-grey: #c4c4c4;
     --white-color: #fff;
-    --light-grey: #dedede;
-    --border-grey: #7F7C87;
+    --grey: #7F7C87;
     --card-border: #ccc;
     --link-blue: #007bff;
     --link-blue-hover: #0056b3;
@@ -22,19 +21,20 @@
 }
 
 body {
+    /* background-image: url(assets/user_wallpaper.png); */
+    /* background-size: cover; */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: var(--white-color);
-    color: var(--primary-color);
+    background: var(--light-light-grey); 
+    color: var(--black);
 }
 nav {
-    background: var(--primary-color);
-    color: var(--third-color);
+    background: var(--black);
+    color: var(--light-grey);
     padding: 10px 0;
-    text-align: center;
-    display: inline-block;
+    /* text-align: center; */
     position: sticky;
     top: 0;
     z-index: 999;
@@ -52,28 +52,27 @@ nav ul li {
     margin: 0 10px;
     padding: 5px;
 }
-nav ul li:hover {
-    /* text-decoration: underline; */
-    background-color: var(--fourth-color);
-}
 nav ul li a {
-    color: var(--third-color);
+    color: var(--light-grey);
     text-decoration: none;
     font-weight: bold;
+}
+nav ul li a:hover {
+    color: var(--yellow);
+}
+nav ul li a {
+    transition: color 1s ease;
 }
 nav ul li button {
     background: none;
     border: none;
-    color: var(--third-color);
+    color: var(--light-grey);
     font-weight: bold;
     cursor: pointer;
 }
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
+
 section {
-    margin-top: 5cm;
+    /* margin-top: 5cm; */
     margin-bottom: 5cm;
     text-align: center;
     align-items: center;
@@ -81,50 +80,86 @@ section {
 section h2{
     font-size: 2em;
     margin:16px 0 16px 0;
-    background-color: var(--secondary-color);
+    background-color: var(--yellow);
     text-align: center;
     padding: 10px;
+    color: var(--black);
+    box-shadow: #211f2e 0px 4px;
 }
+section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section ul li{
+    margin: 10px; 
+    display: flex;
+    align-items: center;
+}
+/* Estilos para los íconos de habilidades */
 i {
-    color: var(--primary-color);
+    color: var(--black);
     font-size: 2em;
     margin: 0 10px;
 }
+/*Estilos para la cabecera*/
 header {
+    background-image: url("/assets/user_wallpaper.png");
+    background-size:cover;
     text-align: center;
-    padding: 20px;
-    height: 400px;
+    /* padding: 20px; */
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+header h1 {
+    font-size: 3em;
+    color: var(--white-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    margin: 0;
+}
+header div {
+    color: var(--white-color);
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    /* display: flex; */
+    justify-content: center;
+    margin-top: 20px;
+}
 .profile-photo {
+    /* image-resolution: inherit; */
     width: 250px;
-    height: 250px;
+    height: 290px;
     border-radius: var(--border-radius-large);
     margin: 20px auto;
-    border: 3px solid var(--white-color);
+    border: 3px solid var(--black);
 }
 
-/* Estilos para la sección de habilidades */
-.skills {
-    padding: 20px;
+/* Estilos para la sección de redes sociales */
+#medias-title{
+    margin-top: 0;
 }
-.skills ul {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Flexbox para alinear en fila */
-    justify-content: center; /* Centrar los elementos */
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten si no caben */
-}
-.skills ul li {
-    margin: 10px; /* Espaciado entre los elementos */
-    display: flex;
+.social-media ul li {
+    display: inline-block;
     align-items: center;
+    margin: 0 10px;
 }
+.social-media ul li a {
+    text-decoration: none;
+}
+/* Estilos para la sección de habilidades */
 .skills ul li i {
     margin-right: 10px;
+}
+.soft-skills {
+    background-color: var(--light-grey);
+    padding: 10px;
+    margin: 10px;
+    border-radius: var(--border-radius-small);
 }
 
 /* Estilos para la sección de proyectos */
@@ -153,17 +188,17 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;
     font-style: normal;
-    color: var(--primary-color);
+    color: var(--black);
 }
 .contact form p {
     display: inline-block;
-    padding: 10px 10px;
+    padding: 5px 5px;
     margin: 10px 0;
-    background-color: var(--third-color);
+    /* background-color: var(--light-grey); */
 }
 .contact form button {
     padding: 10px 10px;
-    background: var(--fourth-color);
+    background: var(--indigo);
     color: #fff;
     border: none;
     border-radius:5%;
@@ -176,25 +211,25 @@ header {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--primary-color);
-    color: var(--third-color);
+    background-color: var(--black);
+    color: var(--light-grey);
 }
 
 
 /* Estilos para el tema oscuro */
 body.dark-theme {
-    background: var(--primary-color);
-    color: var(--third-color);
+    background: var(--black);
+    color: var(--light-grey);
 }
 h2.dark-theme {
-    background-color: var(--fourth-color);
+    background-color: var(--indigo);
 }
 i.dark-theme {
-    color: var(--third-color);
+    color: var(--light-grey);
 }
 .project-card.dark-theme {
-    background: var(--fourth-color(0.2));
-    border-color: var(--third-color);
+    background: var(--indigo(0.2));
+    border-color: var(--light-grey);
 }
 #themeBtn {
     padding: 0.5rem 1rem;
@@ -202,7 +237,13 @@ i.dark-theme {
 
 /* En pantallas pequeñas preferimos imágenes cuadradas 1:1 para ocupar menos alto y dejar espacio para el contenido */
 @media (max-width: 600px) {
-    :root { --image-aspect: 1/1; }
+    body{width:auto; font-size: small;}
+    nav{flex-direction: row;font-size: small; flex-wrap: wrap;width: auto; padding: 0;}
+    nav ul{margin: 0; padding: 0%; flex-wrap: wrap;}
+    nav ul li{margin: 2px 4px 2px 4px; padding: 0;}
+    section ul {flex-direction: column; font-size: small; margin:3px;}
+    ul.card-tech{display: flex; flex-direction: row; font-size: small; margin:3px;}
+    :root { --image-aspect: 1/1; } 
     .project-gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .project-card { width: auto; }
 }

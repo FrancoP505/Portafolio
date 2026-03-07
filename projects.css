@@ -1,3 +1,25 @@
+:root {
+    --black: #121212;
+    --yellow: #FFD166;
+    --light-light-grey: #E7ECEF;
+    --indigo: #504872;
+    --light-grey: #c4c4c4;
+    --white-color: #fff;
+    --grey: #7F7C87;
+    --card-border: #ccc;
+    --link-blue: #007bff;
+    --link-blue-hover: #0056b3;
+    --dark-hover: #858585;
+    --card-background: #dedede;
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    --shadow-dark: rgba(0, 0, 0, 1);
+    --border-radius-small: 5px;
+    --border-radius-medium: 8px;
+    --border-radius-large: 10%;
+    /* aspecto por defecto para imágenes: 4:3 (puedes cambiar a 1/1 si prefieres cuadrados) */
+    --image-aspect: 4/3;
+}
+
 .project-card {
     text-align: center;
     justify-content: center;   
@@ -6,12 +28,12 @@
     width: 400px;
     margin: 15px;
     padding: 5px;
-    border: 6px solid var(--border-grey);
+    border: 6px solid var(--grey);
     border-radius: var(--border-radius-medium);
     overflow: hidden;
     cursor: pointer;            
     transition: box-shadow 0.3s;
-    background: var(--light-grey);
+    background: var(--light-light-grey);
 } 
 .project-card:hover {
     box-shadow: 0 4px 8px var(--shadow-dark);
@@ -106,7 +128,7 @@
     cursor: pointer;
     border-radius: 6px;
 }
-.carousel-btn:focus { outline: 2px solid var(--secondary-color); }
+.carousel-btn:focus { outline: 2px solid var(--yellow); }
 .carousel-indicators {
     display:flex;
     flex-direction: column;
@@ -124,7 +146,7 @@
     cursor: pointer;
 }
 .carousel-indicator.active {
-    background: var(--secondary-color);
+    background: var(--yellow);
 }
 .modal-close {
     position: absolute;

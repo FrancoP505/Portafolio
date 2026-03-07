@@ -12,18 +12,21 @@
     <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">    
 </head>
 <body>
+
 <nav>
+        <!-- <button id="ToggleNav" class="nav-toggle">Menú</button> -->
     <ul>
         <li><a href="#medias-title">Redes sociales</a></li>
         <li><a href="#skills-title">Habilidades</a></li>
         <li><a href="#projects-title">Proyectos</a></li>
         <li><a href="#resume-title">Currículum</a></li>
         <li><a href="#contact-title">Contacto</a></li>
-        <li><button id="themeBtn">Cambiar tema</button></li>
+        <!-- <li><button id="themeBtn">Cambiar tema</button></li> -->
     </ul>
 </nav>
+
 <header>
-    <img src="profile.jpg" alt="Foto de Perfil" class="profile-photo">
+    <img src="assets/profile.jpeg" alt="Foto de Perfil" class="profile-photo">
     <h1>Franco Piedrabuena</h1>
     <div>
         <p><strong>Desarrollador Web Junior</strong></p>
@@ -33,15 +36,18 @@
 
 <section class="social-media">
     <h2 id="medias-title">REDES SOCIALES</h2>
-    <a href="https://www.linkedin.com/in/franco-piedrabuena-20a937295/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.github.com/FrancoP505" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/franco-piedrabuena-20a937295/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://www.github.com/FrancoP505" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i>GitHub</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100076289443090" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i>Facebook</a></li>
+    </ul>
 </section>
 
 <section class="skills">
     <h2 id="skills-title">HABILIDADES</h2>
     <div class="div-skills">
         <!-- <h3>Hard Skills</h3> -->
-        <ul>
+        <ul class="hard-skills">
             <li><i class="fab fa-html5"></i>HTML</li>
             <li><i class="fab fa-css3-alt"></i>CSS</li>
             <li><i class="fab fa-js"></i>JavaScript</li>
@@ -50,12 +56,12 @@
             <li><i class="fab fa-git-alt"></i>Git</li>
             <li><i class="fab fa-bootstrap"></i>Bootstrap</li>
             <li><i class="fab fa-wordpress"></i>WordPress</li>
-            <li><i class="fas fa-code"></i>Programación orientada a objetos</li>
         </ul>
     </div>
     <div>
         <!-- <h3>Soft Skills</h3> -->
-        <ul>
+        <ul class="soft-skills">
+            <li><i class="fas fa-code"></i>Programación orientada a objetos</li>
             <li><i class="fas fa-comments"></i>Comunicación</li>
             <li><i class="fas fa-users"></i>Trabajo en equipo</li>
             <li><i class="fas fa-lightbulb"></i>Resolución de problemas</li>
@@ -93,9 +99,13 @@
         <button type="button" id="copyMailBtn">Copiar</button>
     </form>
 </section>
+
 <footer>
-    <p>&copy; 2025 Franco Piedrabuena. Todos los derechos reservados
+    <p>&copy; 2025 Franco Piedrabuena. Todos los derechos reservados</p>
+</footer>
+
 </body>
 <!-- <script src="theme.js"></script> -->
-<script src="utils.js"></script>
+<script src="utils.js"></script> 
+<!-- <script src="toggleNav.js"></script> -->
 </html>
