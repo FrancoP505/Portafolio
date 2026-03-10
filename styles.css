@@ -106,29 +106,57 @@ i {
 }
 /*Estilos para la cabecera*/
 header {
-    background-image: url("/assets/user_wallpaper.png");
+    background-image: url("/assets/user_wallpaper.png"); 
     background-size:cover;
-    text-align: center;
+    /* text-align: center; */
     /* padding: 20px; */
+    
     height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+header div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-header h1 {
-    font-size: 3em;
-    color: var(--white-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
-    margin: 0;
-}
-header div {
-    color: var(--white-color);
-    font-size: 1.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
-    /* display: flex; */
+
+.header-left {
+    font-weight: 800;
+    font-style: oblique;
+    font-size: larger;
+    color: var(--black);
+    text-shadow: var(--white-color) 1px 1px 2px;
+} 
+header div ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
     justify-content: center;
-    margin-top: 20px;
+    flex-wrap: wrap;
+}
+header div ul li:hover {
+    transition: color 1s ease;
+    background-color: var(--yellow);
+}
+header div ul li {
+    background-color: var(--light-light-grey);
+    margin: 10px 10px;
+    padding: 5px;
+    border-radius: var(--border-radius-small);
+    box-shadow: #121212 0px 4px;
+    cursor: pointer;
+}
+
+header div ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+    justify-self: center;
+    
 }
 .profile-photo {
     /* image-resolution: inherit; */
@@ -139,18 +167,6 @@ header div {
     border: 3px solid var(--black);
 }
 
-/* Estilos para la sección de redes sociales */
-#medias-title{
-    margin-top: 0;
-}
-.social-media ul li {
-    display: inline-block;
-    align-items: center;
-    margin: 0 10px;
-}
-.social-media ul li a {
-    text-decoration: none;
-}
 /* Estilos para la sección de habilidades */
 .skills ul li i {
     margin-right: 10px;
@@ -196,17 +212,7 @@ header div {
     margin: 10px 0;
     /* background-color: var(--light-grey); */
 }
-.contact form button {
-    padding: 10px 10px;
-    background: var(--indigo);
-    color: #fff;
-    border: none;
-    border-radius:5%;
-    cursor: pointer;
-}
-.contact form button:hover {
-    background: var(--dark-hover);
-} 
+
 
 footer {
     text-align: center;
