@@ -247,9 +247,14 @@ i.dark-theme {
     nav{flex-direction: row;font-size: small; flex-wrap: wrap;width: auto; padding: 0;}
     nav ul{margin: 0; padding: 0%; flex-wrap: wrap;}
     nav ul li{margin: 2px 4px 2px 4px; padding: 0;}
-    section ul {flex-direction: column; font-size: small; margin:3px;}
+    header {grid-template-columns: 1fr; height: auto; padding: 20px;}
+    .profile-photo {width: 150px; height: 150px;}
+    .header-left {font-size: medium;}
+    .header-right ul li {margin: 10px;}
+    section ul { font-size: small; margin:3px;}
     ul.card-tech{display: flex; flex-direction: row; font-size: small; margin:3px;}
     :root { --image-aspect: 1/1; } 
+    .hard-skills ul {flex-direction: row; font-size: small; margin:3px; flex-wrap: wrap;}
     .project-gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .project-card { width: auto; }
 }
