@@ -214,6 +214,15 @@ function createProjectCard(project) {
     .map(feature => `<li>${feature}</li>`)
     .join('');
   
+  const featuresPreview = project.features
+    .slice(0, 3)
+    .map(f => `<li>${f}</li>`)
+    .join('');
+
+  const moreFeatures = project.features.length > 3
+    ? `<p class="tooltip-hint">+${project.features.length - 3} características más…</p>`
+    : '';
+
   div.innerHTML = `
     <h3 class="card-title">${project.title}</h3>
     <img class="card-img project-img" src="${project.image}" alt="${project.title}" onclick="openModal('${project.id}')">
@@ -227,6 +236,16 @@ function createProjectCard(project) {
       ${featuresHTML}
     </ol>
     <p>${project.description} <a href="#" onclick="openModal('${project.id}'); return false;">...leer más</a></p>
+
+    <div class="card-tooltip" role="tooltip">
+      <p class="tooltip-title">${project.title}</p>
+      <p class="tooltip-desc">${project.description}</p>
+      <ul class="tooltip-features">
+        ${featuresPreview}
+      </ul>
+      ${moreFeatures}
+      <p class="tooltip-hint">🖱 Click para ver más</p>
+    </div>
   `;
   
   // Hacer clickeable toda la tarjeta

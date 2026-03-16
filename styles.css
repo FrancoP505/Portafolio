@@ -27,9 +27,10 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: var(--light-light-grey); 
+    background: var(--light-light-grey);
     color: var(--black);
 }
+
 nav {
     background: var(--black);
     color: var(--light-grey);
@@ -39,8 +40,9 @@ nav {
     top: 0;
     z-index: 999;
     width: 100%;
-    box-shadow: 10px 6px 6px rgba(0,0,0,0.20);
+    box-shadow: 10px 6px 6px rgba(0, 0, 0, 0.20);
 }
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -48,21 +50,26 @@ nav ul {
     display: flex;
     justify-content: center;
 }
+
 nav ul li {
     margin: 0 10px;
     padding: 5px;
 }
+
 nav ul li a {
     color: var(--light-grey);
     text-decoration: none;
     font-weight: bold;
 }
+
 nav ul li a:hover {
     color: var(--yellow);
 }
+
 nav ul li a {
     transition: color 1s ease;
 }
+
 nav ul li button {
     background: none;
     border: none;
@@ -77,15 +84,17 @@ section {
     text-align: center;
     align-items: center;
 }
-section h2{
+
+section h2 {
     font-size: 2em;
-    margin:16px 0 16px 0;
+    margin: 16px 0 16px 0;
     background-color: var(--yellow);
     text-align: center;
     padding: 10px;
     color: var(--black);
     box-shadow: #211f2e 0px 4px;
 }
+
 section ul {
     list-style: none;
     padding: 0;
@@ -93,30 +102,34 @@ section ul {
     justify-content: center;
     flex-wrap: wrap;
 }
-section ul li{
-    margin: 10px; 
+
+section ul li {
+    margin: 10px;
     display: flex;
     align-items: center;
 }
+
 /* Estilos para los íconos de habilidades */
 i {
     color: var(--black);
     font-size: 2em;
     margin: 0 10px;
 }
+
 /*Estilos para la cabecera*/
 header {
-    background-image: url("/assets/user_wallpaper.png"); 
-    background-size:cover;
+    background-image: url("/assets/user_wallpaper.png");
+    background-size: cover;
     /* text-align: center; */
     /* padding: 20px; */
-    
+
     height: 650px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     /* justify-content: center; */
     /* align-items: center; */
 }
+
 header div {
     display: flex;
     flex-direction: column;
@@ -130,7 +143,8 @@ header div {
     font-size: larger;
     color: var(--black);
     text-shadow: var(--white-color) 1px 1px 2px;
-} 
+}
+
 header div ul {
     list-style: none;
     padding: 0;
@@ -138,10 +152,12 @@ header div ul {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 header div ul li:hover {
     transition: color 1s ease;
     background-color: var(--yellow);
 }
+
 header div ul li {
     background-color: var(--light-light-grey);
     margin: 10px 10px;
@@ -156,8 +172,9 @@ header div ul li a {
     text-decoration: none;
     font-weight: bold;
     justify-self: center;
-    
+
 }
+
 .profile-photo {
     /* image-resolution: inherit; */
     width: 250px;
@@ -171,6 +188,7 @@ header div ul li a {
 .skills ul li i {
     margin-right: 10px;
 }
+
 .soft-skills {
     background-color: var(--light-grey);
     padding: 10px;
@@ -180,10 +198,11 @@ header div ul li a {
 
 /* Estilos para la sección de proyectos */
 .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
 }
 
 /* Estilos para la sección de currículum */
@@ -199,6 +218,7 @@ header div ul li a {
     max-width: 600px;
     margin: 0 auto;
 }
+
 .contact form h3 {
     display: block;
     margin-top: 10px;
@@ -206,11 +226,11 @@ header div ul li a {
     font-style: normal;
     color: var(--black);
 }
+
 .contact form p {
     display: inline-block;
     padding: 5px 5px;
     margin: 10px 0;
-    /* background-color: var(--light-grey); */
 }
 
 
@@ -227,34 +247,98 @@ body.dark-theme {
     background: var(--black);
     color: var(--light-grey);
 }
+
 h2.dark-theme {
     background-color: var(--indigo);
 }
+
 i.dark-theme {
     color: var(--light-grey);
 }
+
 .project-card.dark-theme {
     background: var(--indigo(0.2));
     border-color: var(--light-grey);
 }
+
 #themeBtn {
     padding: 0.5rem 1rem;
-} 
+}
 
 /* En pantallas pequeñas preferimos imágenes cuadradas 1:1 para ocupar menos alto y dejar espacio para el contenido */
 @media (max-width: 600px) {
-    body{width:auto; font-size: small;}
-    nav{flex-direction: row;font-size: small; flex-wrap: wrap;width: auto; padding: 0;}
-    nav ul{margin: 0; padding: 0%; flex-wrap: wrap;}
-    nav ul li{margin: 2px 4px 2px 4px; padding: 0;}
-    header {grid-template-columns: 1fr; height: auto; padding: 20px;}
-    .profile-photo {width: 150px; height: 150px;}
-    .header-left {font-size: medium;}
-    .header-right ul li {margin: 10px;}
-    section ul { font-size: small; margin:3px;}
-    ul.card-tech{display: flex; flex-direction: row; font-size: small; margin:3px;}
-    :root { --image-aspect: 1/1; } 
-    .hard-skills ul {flex-direction: row; font-size: small; margin:3px; flex-wrap: wrap;}
-    .project-gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .project-card { width: auto; }
+    body {
+        width: auto;
+        font-size: small;
+    }
+
+    nav {
+        flex-direction: row;
+        font-size: small;
+        flex-wrap: wrap;
+        width: auto;
+        padding: 0;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0%;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 2px 4px 2px 4px;
+        padding: 0;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 20px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-left {
+        font-size: medium;
+    }
+
+    .header-right ul li {
+        margin: 10px;
+    }
+
+    section ul {
+        font-size: small;
+        margin: 3px;
+    }
+
+    ul.card-tech {
+        display: flex;
+        flex-direction: row;
+        font-size: small;
+        margin: 3px;
+    }
+
+    :root {
+        --image-aspect: 1/1;
+    }
+
+    .hard-skills ul {
+        flex-direction: row;
+        font-size: small;
+        margin: 3px;
+        flex-wrap: wrap;
+    }
+
+    .project-gallery {
+        gap: 8px;
+        padding: 6px;
+    }
+
+    .project-card {
+        width: 155px;
+    }
 }
